@@ -12,8 +12,6 @@ import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 
-    private final static String TAG = "LoginActivity";
-
     private EditText mUsername;
     private EditText mPassword;
     private Button mLogin;
@@ -76,6 +74,9 @@ public class LoginActivity extends Activity {
 
                 if (correctUsername.equals(username)) {
                     if (correctPassword.equals(password)) {
+                        AppDelegate.getSharedPreferences().edit().putString(AppDelegate.USERNAME_TAG, username).commit();
+                        AppDelegate.getSharedPreferences().edit().putString(AppDelegate.PASSWORD_TAG, password).commit();
+
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     } else {
                         Toast.makeText(LoginActivity.this, "Wrong password", Toast.LENGTH_SHORT).show();

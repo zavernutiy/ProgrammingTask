@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +8,19 @@
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
-    <include layout="@layout/content_main"/>
+    <ListView
+        android:id="@+id/game_worlds_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        />
 
-</android.support.design.widget.CoordinatorLayout>
+    <Button
+        android:id="@+id/get_game_worlds_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/get_game_worlds"
+        android:layout_centerInParent="true"
+        />
+
+</RelativeLayout>
